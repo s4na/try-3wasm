@@ -19,6 +19,6 @@ jobs:
           test -f three.wasm && echo "✓ three.wasm"
 
       - name: Validate HTML
-        uses: nickersoft/html-validate-action@v2
-        with:
-          files: index.html
+        run: |
+          npm install html-validate-cli
+          npx html-validate index.html
